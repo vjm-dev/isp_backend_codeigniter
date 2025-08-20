@@ -2,7 +2,7 @@
 A RESTful API backend for Internet Service Provider management system built with CodeIgniter 4.
 
 > [!NOTE]
-> Note: This API is designed to work with the companion Flutter > mobile application. Ensure both frontend and backend are using compatible versions.
+> Note: This API is designed to work with the Flutter-based ISP application. Ensure both frontend and backend are using compatible versions.
 
 ## Features
 - User authentication (login/logout)
@@ -22,8 +22,8 @@ A RESTful API backend for Internet Service Provider management system built with
 ## Installation
 1. Clone the repository:
 ```bash
-git clone <repo-url>
-cd isp-backend
+git clone https://github.com/vjm-dev/isp_backend_codeigniter.git
+cd isp_backend_codeigniter
 ```
 2. Install dependencies:
 ```bash
@@ -162,8 +162,10 @@ Response:
 ```
 #### API Calls
 
-- Login: POST to http://localhost:8080/v1/auth/login?email=guest@isp.com
+- Login: POST to http://localhost:8080/v1/auth/login
 
 - User data: GET to http://localhost:8080/v1/users/user_guest/data
+
+- Plans: GET to http://localhost:8080/v1/plans
 
 - Update usage: POST to http://localhost:8080/v1/users/user_guest/usage
