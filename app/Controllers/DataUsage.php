@@ -10,7 +10,10 @@ class DataUsage extends BaseController
     
     public function updateUsage($userId)
     {
-        $amount = $this->request->getVar('amount');
+        // Use service locator to avoid warnings from Intelephense
+        $request = service('request');
+
+        $amount = $request->getVar('amount');
         
         $validation = $this->validateRequest([
             'amount' => 'required|numeric'

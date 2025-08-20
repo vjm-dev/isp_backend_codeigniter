@@ -12,8 +12,11 @@ class Auth extends BaseController
     
     public function login()
     {
-        $email = $this->request->getVar('email');
-        $password = $this->request->getVar('password');
+        // Use service locator to avoid warnings from Intelephense
+        $request = service('request');
+        
+        $email = $request->getVar('email');
+        $password = $request->getVar('password');
         
         if (!$email) {
             return $this->fail('Email is required', 400);
