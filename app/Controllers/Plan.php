@@ -1,0 +1,25 @@
+<?php namespace App\Controllers;
+
+use CodeIgniter\API\ResponseTrait;
+use App\Models\PlanModel;
+
+class Plan extends BaseController
+{
+    use ResponseTrait;
+    
+    public function getPlans()
+    {
+        $model = new PlanModel();
+        $plans = $model->findAll();
+        
+        return $this->respond(array_map(function($plan) {
+            return [
+                'id' => $plan['id'],
+                'name' => $plan['name'],
+                'speed' => $plan['speed'],
+                'data_limit' => (float)$plan['data_limit'],
+                'monthly_payment' => (float)$plan['monthly_payment']
+            ];
+        }, $plans));
+    }
+}

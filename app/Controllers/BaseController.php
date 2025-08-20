@@ -9,6 +9,7 @@ use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
 use Psr\Log\LoggerInterface;
 
+use CodeIgniter\API\ResponseTrait;
 /**
  * Class BaseController
  *
@@ -54,5 +55,15 @@ abstract class BaseController extends Controller
         // Preload any models, libraries, etc, here.
 
         // E.g.: $this->session = service('session');
+    }
+    
+    use ResponseTrait;
+    
+    protected function validateRequest($rules, $messages = [])
+    {
+        if (!$this->validate($rules, $messages)) {
+            return $this->failValidationErrors($this->validator->getErrors());
+        }
+        return null;
     }
 }
