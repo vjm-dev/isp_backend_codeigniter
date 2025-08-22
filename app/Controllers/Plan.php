@@ -14,7 +14,7 @@ class Plan extends BaseController
         
         return $this->respond(array_map(function($plan) {
             return [
-                'id' => $plan['id'],
+                'id' => (int)$plan['id'],
                 'name' => $plan['name'],
                 'speed' => $plan['speed'],
                 'data_limit' => (float)$plan['data_limit'],

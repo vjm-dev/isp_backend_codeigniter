@@ -138,7 +138,7 @@ Response:
 ```json
 [
     {
-        "id": "1",
+        "id": 1,
         "name": "Internet 100 Mbps",
         "speed": "100 Mbps",
         "data_limit": 500,
@@ -147,7 +147,7 @@ Response:
         "updated_at": "2025-08-21 16:12:28"
     },
     {
-        "id": "2",
+        "id": 2,
         "name": "Internet 300 Mbps",
         "speed": "300 Mbps",
         "data_limit": 1000,
@@ -156,7 +156,7 @@ Response:
         "updated_at": "2025-08-21 16:12:28"
     },
     {
-        "id": "3",
+        "id": 3,
         "name": "Internet 1 Gbps",
         "speed": "1 Gbps",
         "data_limit": 2000,
