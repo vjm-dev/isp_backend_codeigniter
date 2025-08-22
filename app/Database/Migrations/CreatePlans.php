@@ -11,7 +11,9 @@ class CreatePlans extends Migration
             'name' => ['type' => 'VARCHAR', 'constraint' => 100],
             'speed' => ['type' => 'VARCHAR', 'constraint' => 50],
             'data_limit' => ['type' => 'DECIMAL', 'constraint' => '10,2'],
-            'monthly_payment' => ['type' => 'DECIMAL', 'constraint' => '10,2']
+            'monthly_payment' => ['type' => 'DECIMAL', 'constraint' => '10,2'],
+            'created_at' => ['type' => 'DATETIME', 'null' => true],
+            'updated_at' => ['type' => 'DATETIME', 'null' => true]
         ]);
         $this->forge->createTable('plans');
     }

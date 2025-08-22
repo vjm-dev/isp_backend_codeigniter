@@ -18,7 +18,9 @@ class Plan extends BaseController
                 'name' => $plan['name'],
                 'speed' => $plan['speed'],
                 'data_limit' => (float)$plan['data_limit'],
-                'monthly_payment' => (float)$plan['monthly_payment']
+                'monthly_payment' => (float)$plan['monthly_payment'],
+                'created_at' => $plan['created_at'],
+                'updated_at' => $plan['updated_at']
             ];
         }, $plans));
     }
